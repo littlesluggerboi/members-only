@@ -1,0 +1,28 @@
+{
+  "name": "members-only",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A members only message club",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/littlesluggerboi/members-only.git"
+  },
+  "author": "Aeron C. Tayaotao (https://github.com/littlesluggerboi)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/littlesluggerboi/members-only/issues"
+  },
+  "homepage": "https://github.com/littlesluggerboi/members-only#readme",
+  "dependencies": {
+    "@prisma/client": "^6.6.0",
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-validator": "^7.2.1",
+    "prisma": "^6.6.0"
+  }
+}
