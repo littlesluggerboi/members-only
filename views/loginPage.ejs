@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<%-include("partials/head.ejs")%>
+<link rel="stylesheet" href="/css/signup.css">
+<body>
+    
+    <section class="container">
+        <div class="sign_up">
+            <div class="logo">
+                <img src="/images/cards-club.svg" alt="Icon">
+                <h1>Clubs</h1>
+            </div>
+            <div class="switch">
+                <a href="/sign-up"">Sign Up</a>
+                |
+                <a href="/log-in" class="selected">Login</a>
+            </div>
+            <form action="/sign-up" method="POST">
+                <label for="email">Email</label>
+                <input autofocus type="email" id="email" name="email" required>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </section>
+</body>
+</html>
