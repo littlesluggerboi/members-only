@@ -1,0 +1,64 @@
+.logo {
+  margin: 2rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  flex-wrap: wrap;
+  text-decoration: none;
+  color: black;
+  max-width: 320px;
+}
+
+.logo > img {
+  max-width: 80px;
+}
+
+.banner_message{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.banner_message h1{
+  font-size: 3rem;
+  padding: 0 clamp(1rem, 10vw, 10rem);
+}
+
+.banner_message span{
+  color: goldenrod;
+}
+
+.banner_message p{
+  margin: 1rem 0;
+  font-size: 2rem;
+  color: rgb(75, 75, 75);
+}
+
+.actions{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem;
+}
+
+.actions a{
+  text-decoration: none;
+  color: black;
+  border-radius: 0.25rem;
+  padding: 0.25rem 1rem;
+  box-shadow: 0 0 0.25rem gray;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.actions a:hover{
+  transition: transform 200ms ease-in;
+  transform: scale(1.1);
+}
+
+.actions a:first-of-type{
+  background-color: black;
+  color: white;
+}
