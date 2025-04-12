@@ -1,45 +1,50 @@
 import passport from "passport";
 import { Strategy as LocalStrategy } from "passport-local";
-import bcrypt from "bcrypt";
 import prisma from "../prisma/prismaClient.js";
+import bcrypt from "bcrypt";
 
 passport.use(
-  new LocalStrategy(async (username, password, done) => {
-    try {
-      const user = await prisma.member.findUnique({
-        where: { email: username },
-      });
-      if (!user) {
-        return done(null, false, {
-          message: "Username is not associated with an account.",
+  "local",
+  new LocalStrategy(
+    { usernameField: "email" },
+    async (givenUsername, givenPassword, done) => {
+      try {
+        const queriedUser = await prisma.member.findUnique({
+          where: { email: givenUsername },
         });
+        if (!queriedUser) {
+          return done(new Error("No account"), false);
+        }
+        const { password, ...user } = queriedUser;
+        const match = await bcrypt.compare(givenPassword, password);
+        if (match) {
+          return done(null, user);
+        }
+        return done(new Error("Wrong Password", false));
+      } catch (error) {
+        return done(error);
       }
-      const match = await bcrypt.compare(password, user.password);
-      if (!match) {
-        return done(null, false, { message: "Incorrect password." });
-      }
-      return done(null, user);
-    } catch (error) {
-      return done(error);
     }
-  })
+  )
 );
 
 passport.serializeUser((user, done) => {
-  done(null, user.id);
+  console.log("Serialize: ", user);
+  return done(null, user.id);
 });
 
 passport.deserializeUser(async (id, done) => {
+  console.log("Deserialize: ", id);
   try {
     const user = await prisma.member.findUnique({
-      where: {
-        id: parseInt(id),
-      },
+      where: { id },
+      omit: { password: true },
     });
-    done(null, user);
+    if (user) {
+      return done(null, user);
+    }
+    return done(new Error("No user"), false);
   } catch (error) {
-    done(error);
+    return done(error);
   }
 });
-
-export default passport;
