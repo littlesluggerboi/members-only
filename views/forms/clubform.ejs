@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="/css/form.css">
+<script src="/scripts/clubform.js" defer type="module"></script>
+<form action="<%=form.url%>" method="<%=form.method%>" class="form">
+    <label for="name">Club Name</label>
+    <input value="<%=form.club.name%>" type="text" name="name" id="name" placeholder="Enter name of club" required>
+    <label for="description">Club Purpose/Description</label>
+    <textarea name="description" id="description" rows="5" placeholder="Describe the club here..."><%=form.club.description%></textarea>
+    <label for="approval"><input type="checkbox" id="approval" name="approval">Is everyone free to join?</label>
+    <fieldset id="club_questionaire">
+        <label for="question">Approval Question</label>
+        <textarea required name="question" id="question" placeholder="Write a question to challenge and aspiring member" rows="5"><%=form.club.club_approval.question%></textarea>
+        <label for="answer">Approval Answer</label>
+        <textarea required name="answer" id="answer" placeholder="Enter answer to the question..."><%=form.club.club_approval.answer%></textarea>
+    </fieldset>
+    <button><%=form.submit%></button>
+</form>
