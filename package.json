@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "description": "A members only message club",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,11 +18,22 @@
   },
   "homepage": "https://github.com/littlesluggerboi/members-only#readme",
   "dependencies": {
+    "@neondatabase/serverless": "^1.0.0",
+    "@prisma/adapter-neon": "^6.6.0",
     "@prisma/client": "^6.6.0",
+    "@quixo3/prisma-session-store": "^3.1.13",
+    "bcrypt": "^5.1.1",
     "dotenv": "^16.4.7",
     "ejs": "^3.1.10",
     "express": "^5.1.0",
+    "express-session": "^1.18.1",
     "express-validator": "^7.2.1",
-    "prisma": "^6.6.0"
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0",
+    "prisma": "^6.6.0",
+    "ws": "^8.18.1"
+  },
+  "devDependencies": {
+    "@types/ws": "^8.18.1"
   }
 }
