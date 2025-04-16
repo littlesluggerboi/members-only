@@ -6,6 +6,7 @@
 
 generator client {
   provider = "prisma-client-js"
+  previewFeatures = ["driverAdapters"]
 }
 
 datasource db {
@@ -13,22 +14,55 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
-  id         Int       @id @default(autoincrement())
-  first_name String
-  last_name  String
-  password   String
-  email      String
-  status     Boolean
-  admin      Boolean?
-  messages   Message[]
+model Session {
+  id        String   @id
+  sid       String   @unique
+  data      String
+  expiresAt DateTime
 }
 
-model Message {
-  id         Int      @id @default(autoincrement())
-  author_id  Int
-  user       User     @relation(fields: [author_id], references: [id])
-  title      String
-  text       String
-  time_stamp DateTime @default(now())
+model Member {
+  id       Int              @id @default(autoincrement())
+  username String           @unique
+  email    String           @unique
+  password String
+  clubs    ClubMembership[]
+  messages ClubMessages[]
+}
+
+model Club {
+  id            Int              @id @default(autoincrement())
+  name          String
+  description   String?
+  created_at    DateTime         @default(now())
+  club_approval ClubApproval?
+  members       ClubMembership[]
+  messages      ClubMessages[]
+}
+
+model ClubApproval {
+  club_id  Int    @id
+  club     Club   @relation(fields: [club_id], references: [id])
+  question String
+  answer   String
+}
+
+model ClubMembership {
+  club_id   Int
+  member_id Int
+  club      Club    @relation(fields: [club_id], references: [id])
+  member    Member  @relation(fields: [member_id], references: [id])
+  is_admin  Boolean @default(false)
+
+  @@id([club_id, member_id])
+}
+
+model ClubMessages {
+  id        Int      @id @default(autoincrement())
+  member_id Int
+  member    Member   @relation(fields: [member_id], references: [id])
+  club_id   Int
+  club      Club     @relation(fields: [club_id], references: [id])
+  message   String
+  timestamp DateTime @default(now())
 }
