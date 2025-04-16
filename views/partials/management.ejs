@@ -1,0 +1,77 @@
+<link rel="stylesheet" href="/css/management.css">
+<script src="/scripts/management.js" defer type="module"></script>
+<div class="management">
+    <div class="pages">
+        <button class="selected_page">Info</button>
+        <button>Members</button>
+        <button>Messages</button>
+        <button>Approval</button>
+    </div>
+    <div class="output">
+        <form action="<%=form.info%>" method="post" class="output_child  selected_child">
+            <legend>Edit Club Information</legend>
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" required placeholder="Enter name of club" value="<%=club.name%>">
+            <label for="description">Description</label>
+            <textarea name="description" id="description" rows="4" placeholder="Enter club description"><%=club.description%></textarea>
+            <button>Save</button>
+        </form>
+        <div class="members output_child">
+            <div class="member">
+                <b>User Name</b>
+                <b>Role</b>
+                <b>Actions</b>
+            </div>
+            <%club.members.map((member)=>{%>
+                <div class="member">
+                    <p><%=member.member.username%></p>
+                    <p>
+                        <%if(member.is_admin){%>
+                            Admin
+                        <%} else{%>
+                            Member
+                        <%}%>
+                    </p>
+                    <div class="member_action">
+                        <a class="leave" href="/clubs/<%=club.id%>/members/<%=member.member.id%>/revoke">Revoke</a>
+                        <a class="join" href="/clubs/<%=club.id%>/members/<%=member.member.id%>/promote">Promote</a>
+                    </div>
+                </div>
+            <%})%>
+        </div>
+    
+        <div class="messages output_child">
+            <div class="message">
+                <b>User Name</b>
+                <b>Message</b>
+                <b>Actions</b>
+            </div>
+            <%club.messages.map((message)=>{%>
+                <div class="message">
+                    <p><%=message.member.username%></p>
+                    <details>
+                        <summary>Message Details</summary>
+                        <p><%=message.message%></p>
+                    </details>
+                    <div class="message_action">
+                        <a href="/clubs/<%=club.id%>/messages/<%=message.id%>/delete" class="leave">Delete</a>
+                    </div>
+                </div>
+            <%})%>
+        </div>
+
+        <div class="questionaire output_child">
+            <%if(club.club_approval != null){%>
+            <a href="<%=form.approval_removal%>" class="delete">Remove Approval Test</a>
+            <%}%>
+            <form action="<%=form.approval%>" method="post">
+                <legend>Approval Question</legend>
+                <label for="question">Question</label>
+                <textarea required name="question" id="question" placeholder="Enter question" rows="4"><%if(club.club_approval != null){%><%=club.club_approval.question%><%}%></textarea>
+                <label for="answer">Answer</label>
+                <textarea required name="answer" id="answer" placeholder="Enter the answer" rows="2"><%if(club.club_approval != null){%><%=club.club_approval.answer%><%}%></textarea>
+                <button>Save</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<%-include("partials/head.ejs")%>
+<link rel="stylesheet" href="/css/page.css">
+<link rel="stylesheet" href="/css/clubpage.css">
+<body>
+    <%-include("partials/sidebar.ejs")%>
+    <section class="content">
+        <%-include("partials/heading.ejs")%>
+        <div class="club">
+            <div class="page">
+                <h1><%=club.name%>
+                    <%if(page.ismember){%>
+                        <a href="<%=page.url%>/leave"  class="leave">LEAVE</a>
+                    <%} else {%>
+                        <a href="<%=page.url%>/join" class="join">APPLY NOW</a>
+                    <%}%>
+                </h1>
+                <%-include("partials/management.ejs")%>
+            </div>
+            <div class="panel">
+                <h2>Details</h2>
+                <div class="actions">
+                    <%panel.actions.map((action)=>{%>
+                        <a href="<%=action.url%>" class="<%=action.class%>"><%=action.label%></a>
+                    <%})%>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

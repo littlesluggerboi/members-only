@@ -1,0 +1,18 @@
+
+<link rel="stylesheet" href="/css/approval.css">
+<div class="approval">
+    <h2><%=club.name%> Membership Test</h2>
+    <p><b>Instructions: </b>Answer the question correctly to be accepted in the club.</p>
+    <form action="<%=form.url%>" method="post">
+        <legend>
+            <b>Test</b>
+        </legend>
+        <%if(form.question){%>
+            <label for="answer"><%=form.question%></label>
+            <textarea name="answer" id="answer" rows="3"></textarea>
+        <%} else{%>
+            <p>This club does not have a membership test. Everyone is free to join.</p>        
+        <%}%>
+        <button>Join</button>
+    </form>
+</div>

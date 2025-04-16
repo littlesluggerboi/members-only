@@ -1,0 +1,122 @@
+.output {
+  margin-top: 1rem;
+  position: relative;
+}
+.pages button.selected_page {
+  border-bottom: 0.25rem solid goldenrod;
+}
+.pages {
+  display: flex;
+  gap: 1rem;
+}
+
+.pages button {
+  font-size: 1rem;
+  padding: 0.25rem;
+  padding-right: 3rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.pages button:hover {
+  background-color: rgb(245, 245, 245);
+}
+
+.members,
+.messages {
+  display: grid;
+}
+
+.member,
+.message {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 0.5rem 0.25rem;
+  border-bottom: 1px solid gainsboro;
+}
+.member_action,
+.message_action {
+  display: flex;
+  gap: 1rem;
+}
+
+.member_action a,
+.message_action a,
+.questionaire > a {
+  border-radius: 0.25rem;
+  box-shadow: 0 0 0.25rem 0 gainsboro;
+  color: white;
+  font-size: 1rem;
+  height: min-content;
+  text-decoration: none;
+  padding: 0.25rem 1rem;
+}
+.member_action a:hover,
+.message_action a:hover,
+.questionaire > a:hover {
+  transition: transform 200ms ease-in;
+  transform: scale(1.1);
+}
+
+.output_child {
+  top: 0;
+  position: absolute;
+  visibility: hidden;
+}
+
+.output > .selected_child {
+  position: relative;
+  visibility: visible;
+}
+
+.output form {
+  display: grid;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  max-width: 600px;
+  box-shadow: 0 0 0.25rem 0 gray;
+  background-color: white;
+}
+
+.output form input,
+.output form textarea {
+  appearance: none;
+  border: 1px solid black;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
+  resize: none;
+}
+
+.output form legend{
+    font-weight: 900;
+    font-size: 1.2rem;
+}
+
+.output form button {
+  padding: 0.25rem 0;
+  color: white;
+  background-color: goldenrod;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.25rem;
+}
+
+.output form button:hover {
+  transition: all 0.2s ease-in;
+  transform: scale(1.05);
+}
+
+.questionaire > a{
+  width: fit-content;
+  background-color: red;
+  /* margin: 1rem; */
+}
+
+.questionaire{
+  display: grid;
+}
+
+
+
