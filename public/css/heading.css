@@ -1,0 +1,125 @@
+.heading {
+    border-bottom: 1px solid gainsboro;
+    display: flex;
+    padding: 1rem 1rem 1rem 2rem;
+    gap: 1rem;
+  }
+  
+  .heading .profile {
+    position: relative;
+    margin-left: auto;
+  }
+  
+  .heading .profile .user {
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    border: none;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    cursor: pointer;
+    background-color: transparent;
+    font-weight: 600;
+    width: fit-content;
+  }
+  
+  .heading .profile .user:hover {
+    background-color: rgb(238, 238, 238);
+  }
+  .heading .profile .user img {
+    width: 15px;
+  }
+  
+  .heading .profile .user .icon {
+    background-color: goldenrod;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
+    color: white;
+    text-transform: uppercase;
+  }
+  
+  .heading .profile .info {
+    visibility: hidden;
+    position: absolute;
+    color: white;
+    padding: 1rem;
+    background-color: black;
+    border-radius: 0.5rem;
+    width: 200px;
+    top: 2.5rem;
+    left: -65px;
+  }
+  
+  .heading .profile .info .prof_icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: goldenrod;
+    border-radius: 20px;
+    margin: auto;
+  }
+  
+  .heading .profile .info p {
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  
+  .heading .profile .info p:nth-of-type(2) {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid white;
+  }
+  
+  .heading .profile .info button {
+    border: none;
+    cursor: pointer;
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+    align-items: center;
+    background-color: transparent;
+    color: white;
+    margin-top: 1rem;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+  }
+  
+  .heading .profile .info button img {
+    max-width: 15px;
+    filter: invert(1);
+  }
+  
+  .heading .profile .info button:hover {
+    outline: 1px solid white;
+  }
+  
+  .search {
+    display: flex;
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+  }
+  
+  .search input {
+    min-width: 100px;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    appearance: none;
+    padding: 0.25rem 1rem;
+    width: 100%;
+    border: 1px solid rgb(211, 210, 210);
+  }
+  
+  .search button {
+    position: absolute;
+    padding: 0.3rem;
+    right: 0;
+    border: 1px solid rgb(211, 210, 210);
+    color: rgb(85, 84, 84);
+  }
+  

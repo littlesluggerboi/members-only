@@ -1,0 +1,58 @@
+.side-bar {
+  margin: 2rem 4rem 1rem 2rem;
+  max-width: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+
+.side-bar a {
+  color: white;
+  text-decoration: none;
+}
+
+.side-bar .logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.side-bar .logo h1 {
+  font-size: 2rem;
+}
+
+.side-bar .logo img {
+  width: 50px;
+  outline-offset: 2px;
+  outline: 1px solid black;
+  border-radius: 80px;
+  filter: invert(1);
+}
+
+.side-bar h3 {
+  margin-top: 2rem;
+}
+
+.club_ref {
+  padding: 0.25rem 1rem;
+  border-radius: 1rem;
+  max-width: 180px;
+  max-height: 1.8rem;
+  overflow: hidden;
+}
+
+.club_ref:hover, .club_ref.selected {
+  background-color: goldenrod;
+}
+
+.new_club_ref {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  background-color: goldenrod;
+}
+
+.new_club_ref:hover {
+  background-color: rgb(204, 146, 0);
+}

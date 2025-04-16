@@ -1,0 +1,58 @@
+.messages {
+  height: 60vh;
+  overflow: auto;
+  border: 1px solid gainsboro;
+  padding: 1rem 2rem;
+}
+
+.message {
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.message:nth-child(2n) {
+  align-items: end;
+}
+
+.message p {
+  background-color: gainsboro;
+  width: fit-content;
+  padding: 0.25rem 1rem;
+  border-radius: 1rem;
+}
+
+.message span:first-of-type {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.message span:nth-of-type(2) {
+  font-size: 0.8rem;
+}
+
+.messages_container form {
+  display: grid;
+  position: relative;
+}
+
+.messages_container form input {
+  appearance: none;
+  border: 1px solid gainsboro;
+  padding: 0.5rem 5rem 0.5rem 1rem;
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.messages_container form button {
+  padding: 0.25rem 0;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  position: absolute;
+  width: 4rem;
+  padding: 0 1rem;
+  right: 0;
+  background-color: transparent;
+}

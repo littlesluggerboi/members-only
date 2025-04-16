@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="/css/heading.css">
+<script src="/scripts/heading.js" defer type="module"></script>
+<div class="heading">
+    <%if(heading.search){%>
+        <form class="search">
+            <input type="search" name="search" id="search" placeholder="Search for a club">
+            <button>search</button>
+        </form>
+    <%}%>
+    <div class="profile" id="profile">
+        <button class="user">
+            <div class="icon">
+                <%=heading.user.icon%>
+            </div>
+            <%=heading.user.username%>
+            <img src="/images/dropdown.svg" alt="dropdown icon">
+        </button>
+        <div class="info">
+            <div class="prof_icon">U</div>
+            <p><%=heading.user.username%></p>
+            <p><%=heading.user.email%></p>
+            <form action="/logout" method="post">
+                <button><img src="/images/logout.svg" alt="logout">Log Out</button>
+            </form>
+        </div>
+    </div>
+</div>

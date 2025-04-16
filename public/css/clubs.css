@@ -1,0 +1,47 @@
+.clubs {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2rem;
+  padding: 2rem;
+  gap: 1rem;
+  /* background-color: gainsboro; */
+  border-radius: 2rem;
+}
+
+.club {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+
+  text-decoration: none;
+  color: black;
+
+  box-shadow: 0 0 0.25rem 0 gainsboro;
+  border-radius: 1rem;
+}
+
+.club:hover{
+    transition: transform 200ms ease-in;
+    transform: scale(1.05);
+}
+
+.club h4 {
+  margin-top: 0.25rem;
+  margin-left: 0.5rem;
+}
+
+.club > img {
+  border-radius: 1rem;
+  max-width: 300px;
+}
+
+.member_icon {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-left: 0.5rem;
+}
+
+.member_icon > img {
+  max-width: 24px;
+}

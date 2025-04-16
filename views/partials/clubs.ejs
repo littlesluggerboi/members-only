@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="/css/clubs.css">
+<div class="clubs">
+    <%if(clubs.length == 0){%>
+        <p>No clubs were found.</p>
+    <%}else{%>
+        <%for(let club of clubs){%>
+        <a href="/clubs/<%=club.id%>" class="club">
+            <img src="https://img.freepik.com/free-vector/playing-cards-pattern-illustration_23-2151080589.jpg?t=st=1744511003~exp=1744514603~hmac=adbf4aa6467fec83f4e7f284026828d2707a374dc838b411dc489d042519c1ad&w=740" alt="Club item">
+            <h4><%=club.name%></h4>
+            <div class="member_icon">
+                <img src="/images/account-group.svg" alt="Member Group Icon">
+                <span><%=club.member_count%>&#9;Members</span>
+            </div>
+        </a>
+        <%}%>
+    <%}%>
+</div>

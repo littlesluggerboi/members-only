@@ -1,0 +1,14 @@
+<link rel="stylesheet" href="/css/sidebar.css">
+<nav class="side-bar">
+    <a href="/clubs/myclubs" class="logo">
+        <img src="/images/cards-club.svg" alt="">
+        <h1>Clubs</h1>
+    </a>
+    <h3><a href="/clubs/new" class="new_club_ref"><span>+</span>New Club</a></h3>
+    <h3>My Clubs</h3>
+    <a class="club_ref <%=sidebar.myclubs%>" href="/clubs/myclubs">All</a>
+    <a class="club_ref <%=sidebar.favorites%>" href="/clubs/favorites">Favorites</a>
+    <a class="club_ref <%=sidebar.owned%>"  href="/clubs/owned">Owned</a>
+    <h3>Explore</h3>
+    <a class="club_ref <%=sidebar.all%>" href="/clubs">Other Clubs</a>
+</nav>

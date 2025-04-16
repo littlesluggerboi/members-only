@@ -1,0 +1,11 @@
+.members{
+    display: grid;
+}
+
+.member{
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    padding: 0.5rem 0.25rem;
+    border-bottom: 1px solid gainsboro;
+}
+

@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="/css/messages.css">
+<div class="messages_container">
+    <h2>Club Messages</h2>
+    <div class="messages">
+        <%messages.map((message)=>{%>
+            <div class="message">
+                <span><%=message.author%></span>
+                <p><%=message.message%></p>
+                <span><%=message.timestamp%></span>
+            </div>
+        <%})%>
+        
+    </div>
+    <form action="<%=form.url%>" method="post">
+        <input type="text" name="message" required id="message" placeholder="Write a message..">
+        <button><img src="/images/send.svg" alt="Send icon"></button>
+    </form>
+</div>
