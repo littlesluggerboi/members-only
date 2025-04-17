@@ -316,7 +316,8 @@ const getClubMessages = async (req, res, next) => {
         label: "Messages",
       },
     ];
-    if (club.members.length > 0)
+    const admin = club.members[0];
+    if (admin && admin.is_admin)
       actions.push({
         url: `/clubs/${club.id}/manage`,
         class: "",
